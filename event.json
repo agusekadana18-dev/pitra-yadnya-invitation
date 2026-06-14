@@ -1,14 +1,7 @@
 {
-  "invitation": {
-    "personName": "I Gusti Agung Ngurah Sidhemen",
-    "date": {
-      "day": "Sukra",
-      "fullDate": "26 Juni 2026"
-    }
-  },
-  "media": {
-    "photo": {
-      "file": "assets/hero.jpg"
-    }
-  }
+  "person": "I Gusti Agung Ngurah Sidhemen",
+  "dateText": "Sukra, 26 Juni 2026",
+  "dateISO": "2026-06-26T09:00:00",
+  "hero": "assets/hero.jpg",
+  "maps": "https://maps.app.goo.gl/YJcuJezUdzYCQ5Ap8?g_st=iw=Bali&output=embed"
 }
