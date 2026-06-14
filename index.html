@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pitra Yadnya</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Georgia,serif;
+    background:#0f172a;
+    color:#fff;
+    text-align:center;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+}
+
+h1{
+    font-size:3rem;
+    color:#d4af37;
+}
+
+h2{
+    color:#f5d76e;
+}
+
+.card{
+    max-width:800px;
+    margin:auto;
+    padding:30px;
+}
+
+img{
+    max-width:100%;
+    border-radius:20px;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 24px;
+    background:#d4af37;
+    color:#000;
+    text-decoration:none;
+    border-radius:10px;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+    <h1 id="title">Pitra Yadnya</h1>
+    <h2 id="subtitle"></h2>
+    <p id="description"></p>
+</div>
+
+<div class="card">
+    <img id="heroImage" src="" alt="">
+</div>
+
+<div class="card">
+    <h2>Lokasi Acara</h2>
+    <p id="location"></p>
+    <a id="mapsBtn" class="btn" target="_blank">
+        Buka Google Maps
+    </a>
+</div>
+
+<audio id="music" autoplay loop></audio>
+
+<script>
+fetch('event.json')
+.then(res => res.json())
+.then(data => {
+
+document.getElementById("title").innerText =
+data.event.title;
+
+document.getElementById("subtitle").innerText =
+data.event.subtitle;
+
+document.getElementById("description").innerText =
+data.event.description;
+
+document.getElementById("location").innerText =
+data.location.name + " - " + data.location.address;
+
+document.getElementById("mapsBtn").href =
+data.location.mapsLink;
+
+if(data.design.heroImages.length){
+document.getElementById("heroImage").src =
+data.design.heroImages[0];
+}
+
+if(data.music.audioUrl){
+document.getElementById("music").src =
+data.music.audioUrl;
+}
+});
+</script>
+
+</body>
+</html>
