@@ -397,7 +397,7 @@ select{
 
 <!-- MUSIC -->
 <audio id="bgMusic" loop>
-    <source src="assets/music.mp3" type="audio/mpeg">
+    <source src="assets/musik.mp3" type="audio/mpeg">
 </audio>
 
 <!-- COVER -->
@@ -651,57 +651,53 @@ I Gusti Agung Ngurah Sidhemen
 
 <script>
 
-/* OPEN INVITATION */
+document.addEventListener("DOMContentLoaded", function(){
 
-document
-.getElementById("openInvitation")
-.addEventListener("click", async ()=>{
+    const btn = document.getElementById("openInvitation");
+    const cover = document.getElementById("cover");
+    const main = document.getElementById("mainContent");
+    const music = document.getElementById("bgMusic");
 
-    const music =
-    document.getElementById("bgMusic");
+    btn.addEventListener("click", function(){
 
-    try{
-        await music.play();
-    }catch(err){
-        console.log(err);
-    }
+        // tampilkan isi undangan dulu
+        cover.style.display = "none";
+        main.style.display = "block";
 
-    document.getElementById("cover").style.display="none";
+        // baru coba play musik
+        if(music){
+            music.play().catch(function(err){
+                console.log("Audio gagal diputar:", err);
+            });
+        }
 
-    document.getElementById("mainContent").style.display="block";
+    });
 
 });
 
 /* COUNTDOWN */
 
 const targetDate =
-new Date("June 26, 2026 00:00:00").getTime();
+new Date("2026-06-26T09:00:00+08:00").getTime();
 
-setInterval(()=>{
+setInterval(function(){
 
-const now = new Date().getTime();
+    const now = new Date().getTime();
+    const distance = targetDate - now;
 
-const distance = targetDate-now;
+    if(distance < 0) return;
 
-const days =
-Math.floor(distance/(1000*60*60*24));
+    document.getElementById("d").innerHTML =
+        Math.floor(distance / (1000*60*60*24));
 
-const hours =
-Math.floor((distance%(1000*60*60*24))
-/(1000*60*60));
+    document.getElementById("h").innerHTML =
+        Math.floor((distance%(1000*60*60*24))/(1000*60*60));
 
-const minutes =
-Math.floor((distance%(1000*60*60))
-/(1000*60));
+    document.getElementById("m").innerHTML =
+        Math.floor((distance%(1000*60*60))/(1000*60));
 
-const seconds =
-Math.floor((distance%(1000*60))
-/1000);
-
-document.getElementById("d").innerHTML=days;
-document.getElementById("h").innerHTML=hours;
-document.getElementById("m").innerHTML=minutes;
-document.getElementById("s").innerHTML=seconds;
+    document.getElementById("s").innerHTML =
+        Math.floor((distance%(1000*60))/1000);
 
 },1000);
 
