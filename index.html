@@ -1,76 +1,3 @@
-Error sekarang bukan di script, tetapi karena server Odoo tidak sedang berjalan.
-Pesan utamanya:
-ConnectionRefusedError: [Errno 61] Connection refused
-Artinya:
-localhost:8069
-tidak bisa diakses.
-Cek lagi:
-lsof -i :8069
-Kalau tidak ada output berarti Odoo mati.
-
-Jalankan Odoo lagi
-Masuk folder Odoo:
-cd ~/odoo
-Jalankan:
-python3 odoo-bin -d odoo_db
-Tunggu sampai muncul:
-Registry loaded
-atau
-HTTP service (werkzeug) running
-Biarkan terminal ini tetap terbuka.
-
-Buka terminal baru
-Jangan tutup terminal Odoo.
-Buka tab terminal baru:
-cd /Applications/XAMPP/xamppfiles/htdocs/QloApps-develop/qloapps-odoo-sync
-Test koneksi:
-python3 -c "
-import xmlrpc.client
-url='http://localhost:8069'
-db='odoo_db'
-u='admin'
-p='admin'
-c=xmlrpc.client.ServerProxy(f'{url}/xmlrpc/2/common')
-print(c.authenticate(db,u,p,{}))
-"
-Harus keluar:
-2
-atau UID lain.
-
-Setelah itu jalankan sync
-python3 sync_bookings.py
-Harusnya hasilnya:
-✅ Odoo Connected UID=2
-📖 Found 2 bookings
-⏭ Already Exists: QLO-1
-⏭ Already Exists: QLO-2
-
-BOOKING SYNC FINISHED
-Created : 0
-Skipped : 2
-Errors  : 0
-karena booking sudah pernah masuk sebelumnya sebagai:
-* S00025 → QLO-1
-* S00026 → QLO-2
-
-Status integrasi saat ini
-Sudah selesai:
-✅ Category Sync ✅ Room Type Sync ✅ Customer Sync ✅ Booking Sync ✅ Sale Order Sync ✅ Invoice Creation ✅ Invoice Posting
-Yang biasanya dikerjakan berikutnya untuk integrasi QloApps → Odoo adalah:
-1. Sinkronisasi pembayaran booking → Invoice Payment (account.payment)
-2. Sinkronisasi status kamar (Occupied / Available)
-3. Sinkronisasi reservasi baru otomatis (cron tiap 5 menit)
-4. Sinkronisasi check-in / check-out
-5. Dashboard hotel di Odoo
-Saya sarankan lanjut ke sinkronisasi pembayaran booking menjadi Payment Odoo otomatis, sehingga invoice QLO-1 dan QLO-2 langsung berstatus Paid, bukan hanya Posted. Ini biasanya tahap terakhir agar alur reservasi hotel benar-benar selesai end-to-end.  ALMARHUM/ALMARHUMA
-I Gusti Agung Ngurah Sidhemen
-
-Ayah Tercinta Dari:
-I Gst. Ag. Bgs. Herry Setyawan I Gst. Ag. Bgs. Herry Gunawan I Gst. Ag. Ayu Krisnayanthi I Gst. Ag. Ayu Purnamayanthi I Gst. Ag. Bgs. Surya Adiputra
-
-https://drive.google.com/uc?export=download&id=1AwOZDP0H3VpgPz1Iv-16AMjUdCLZWxta/view?usp=sharing
-https://drive.google.com/file/d/
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -327,4 +254,3 @@ musicBtn.onclick = () => {
 
 </body>
 </html>
-
