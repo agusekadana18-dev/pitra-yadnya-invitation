@@ -1,44 +1,19 @@
 {
   "opening": {
-    "greeting": "ᬒᬫ᭄ Om Swastyastu Dengan memohon Asung Kerta Wara Nugraha Ida Sang Hyang Widhi Wasa / Tuhan Yang Maha Esa, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk menghadiri Upacara Pitra Yadnya (Ngaben) yang akan kami laksanakan.",
-    "title": "Upacara Pitra Yadnya",
-    "subtitle": "Atas kehadiran Bapak/Ibu/Saudara/i, kami ucapkan terima kasih",
-    "buttonText": "Buka Undangan",
-    "coverImage": "assets/cover.jpg"
+    "greeting": "Dengan memohon Asung Kerta Wara Nugraha Ida Sang Hyang Widhi Wasa, kami mengundang Bapak/Ibu untuk hadir dalam Upacara Pitra Yadnya."
   },
-
   "event": {
     "person": "I Gusti Agung Ngurah Sidhemen",
     "dateText": "Sukra, 26 Juni 2026",
-    "timeText": "Pukul 09.00 WITA",
     "dateISO": "2026-06-26T09:00:00+08:00"
   },
-
   "hero": {
-    "image": "assets/hero.jpg",
-    "caption": "Foto Upacara"
+    "image": "assets/hero.jpg"
   },
-
-  "countdown": {
-    "enable": true
-  },
-
   "location": {
-    "name": "Puri Padangaji",
-    "address": "Padangaji, Karangasem, Bali",
-    "mapsEmbed": "https://www.google.com/maps?q=Puri+Padangaji+Karangasem+Bali&output=embed",
-    "mapsLink": "https://maps.app.goo.gl/YJcuJezUdzYCQ5Ap8?g_st=iw"
+    "mapsEmbed": "https://www.google.com/maps?q=Karangasem+Bali&output=embed"
   },
-
   "music": {
-    "enable": true,
-    "audio": "assets/music.mp3",
-    "autoPlay": false,
-    "loop": true
-  },
-
-  "footer": {
-    "thanks": "Atas doa dan kehadiran Bapak/Ibu/Saudara/i kami ucapkan terima kasih",
-    "closing": "Om Shanti Shanti Shanti Om"
+    "audio": "assets/music.mp3"
   }
 }
