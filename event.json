@@ -1,31 +1,14 @@
 {
-  "meta": {
-    "theme": "balinese-luxury",
-    "timezone": "Asia/Makassar"
+  "invitation": {
+    "personName": "I Gusti Agung Ngurah Sidhemen",
+    "date": {
+      "day": "Sukra",
+      "fullDate": "26 Juni 2026"
+    }
   },
-
-  "event": {
-    "title": "Pitra Yadnya",
-    "name": "I Gusti Agung Ngurah Sidhemen",
-    "mantra": "Om Purnamadah Purnamidam Purnat Purnamudachyate",
-    "dateTime": "2026-06-26T08:00:00"
-  },
-
-  "family": {
-    "host": "Keluarga Besar Puri Padangaji",
-    "footer": "© 2026 Keluarga Besar Puri Padangaji"
-  },
-
-  "assets": {
-    "heroImage": "assets/hero.jpg",
-    "music": "assets/musik.mp3"
-  },
-
-  "location": {
-    "mapsEmbed": "https://maps.app.goo.gl/YJcuJezUdzYCQ5Ap8?g_st=iw+Bali&output=embed"
-  },
-
-  "rsvp": {
-    "enabled": true
+  "media": {
+    "photo": {
+      "file": "assets/hero.jpg"
+    }
   }
 }
