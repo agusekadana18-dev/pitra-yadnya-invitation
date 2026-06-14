@@ -1,65 +1,31 @@
 {
   "meta": {
-    "version": "1.0",
-    "theme": "black-gold-premium",
-    "culture": "balinese",
-    "type": "pitra-yadnya"
+    "theme": "balinese-luxury",
+    "timezone": "Asia/Makassar"
   },
 
-  "cover": {
-    "title": "Upacara Pitra Yadnya",
-    "buttonText": "BUKA UNDANGAN",
-    "animation": "floating-envelope",
-    "background": "linear-gradient(180deg,#000,#111)"
+  "event": {
+    "title": "Pitra Yadnya",
+    "name": "I Gusti Agung Ngurah Sidhemen",
+    "mantra": "Om Purnamadah Purnamidam Purnat Purnamudachyate",
+    "dateTime": "2026-06-26T08:00:00"
   },
 
-  "music": {
-    "enabled": true,
-    "file": "musik.mp3",
-    "autoplayAfterOpen": true,
-    "loop": true,
-    "icon": "♫"
+  "family": {
+    "host": "Keluarga Besar Puri Padangaji",
+    "footer": "© 2026 Keluarga Besar Puri Padangaji"
   },
 
-  "invitation": {
-    "openingGreeting": "Om Swastyastu",
-    "description": "Dengan hormat kami mengundang Bapak/Ibu/Saudara/i untuk menghadiri Upacara Pitra Yadnya",
-    "personName": "I Gusti Agung Ngurah Sidhemen",
-    "date": {
-      "day": "Sukra",
-      "fullDate": "26 Juni 2026"
-    }
-  },
-
-  "media": {
-    "photo": {
-      "enabled": true,
-      "file": "foto.jpg",
-      "frameStyle": "gold-border"
-    }
+  "assets": {
+    "heroImage": "assets/img/hero.jpg",
+    "music": "assets/audio/music.mp3"
   },
 
   "location": {
-    "enabled": true,
-    "embedUrl": "https://www.google.com/maps?q=Bali&output=embed",
-    "label": "Lokasi Upacara"
+    "mapsEmbed": "https://www.google.com/maps?q=Puri+Padangaji+Bali&output=embed"
   },
 
-  "ornament": {
-    "enabled": true,
-    "style": "balinese-svg-gold",
-    "position": "top-divider"
-  },
-
-  "ui": {
-    "font": {
-      "heading": "Playfair Display",
-      "body": "Poppins"
-    },
-    "colors": {
-      "background": "#0b0b0b",
-      "gold": "#d4af37",
-      "text": "#ffffff"
-    }
+  "rsvp": {
+    "enabled": true
   }
 }
