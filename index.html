@@ -10,7 +10,7 @@
 <style>
 :root{
   --gold:#d4af37;
-  --bg:#0a0a0a;
+  --bg:#0b0b0b;
   --text:#ffffff;
 }
 
@@ -75,13 +75,11 @@ body{
   margin:auto;
 }
 
-/* Ornament Bali */
 .ornament{
-  width:200px;
+  width:220px;
   margin:30px auto;
 }
 
-/* Hero */
 .hero{
   width:100%;
   max-width:420px;
@@ -89,7 +87,6 @@ body{
   margin:30px auto;
 }
 
-/* Headings */
 h2{
   font-family:'Playfair Display',serif;
   color:var(--gold);
@@ -100,13 +97,14 @@ h2{
 #countdown{
   display:flex;
   justify-content:center;
-  gap:20px;
+  gap:16px;
   margin:30px 0;
+  flex-wrap:wrap;
 }
 .cd-box{
   border:1px solid var(--gold);
-  padding:12px 16px;
-  min-width:70px;
+  padding:12px 18px;
+  min-width:80px;
 }
 .cd-box span{
   display:block;
@@ -117,7 +115,7 @@ h2{
 /* Maps */
 iframe{
   width:100%;
-  height:300px;
+  height:320px;
   border:0;
   margin-top:20px;
 }
@@ -127,8 +125,8 @@ iframe{
   position:fixed;
   right:20px;
   bottom:20px;
-  width:50px;
-  height:50px;
+  width:52px;
+  height:52px;
   border-radius:50%;
   background:var(--gold);
   color:#000;
@@ -153,14 +151,14 @@ iframe{
 <!-- MAIN -->
 <section id="main">
 
-  <!-- Ornament Bali SVG -->
+  <!-- Ornament Bali -->
   <svg class="ornament" viewBox="0 0 200 40">
-    <path d="M10 20 Q100 -25 190 20 Q100 65 10 20Z" fill="none" stroke="#d4af37" stroke-width="2"/>
+    <path d="M10 20 Q100 -30 190 20 Q100 70 10 20Z" fill="none" stroke="#d4af37" stroke-width="2"/>
   </svg>
 
   <p>Om Swastyastu</p>
-  <h2 id="personName"></h2>
-  <p id="eventDate"></p>
+  <h2 id="personName">—</h2>
+  <p id="eventDate">—</p>
 
   <img id="heroImage" class="hero" src="" alt="Foto Upacara">
 
@@ -173,7 +171,7 @@ iframe{
   </div>
 
   <h2>Lokasi Upacara</h2>
-  <iframe id="maps"></iframe>
+  <iframe id="maps" loading="lazy"></iframe>
 
 </section>
 
@@ -184,6 +182,24 @@ iframe{
 <button id="musicBtn" style="display:none;">♫</button>
 
 <script>
+const cover = document.getElementById('cover');
+const main = document.getElementById('main');
+const openBtn = document.getElementById('openBtn');
+const music = document.getElementById('bgMusic');
+const musicBtn = document.getElementById('musicBtn');
+
+openBtn.onclick = ()=>{
+  cover.style.display='none';
+  main.style.display='block';
+  music.play().catch(()=>{});
+  musicBtn.style.display='block';
+};
+
+musicBtn.onclick = ()=>{
+  music.paused ? music.play() : music.pause();
+};
+
+// LOAD DATA
 fetch('event.json')
 .then(res=>res.json())
 .then(data=>{
@@ -196,31 +212,17 @@ fetch('event.json')
   setInterval(()=>{
     const now = new Date().getTime();
     const diff = target - now;
-    if(diff < 0) return;
+    if(diff <= 0) return;
 
-    document.getElementById('d').innerText = Math.floor(diff/(1000*60*60*24));
-    document.getElementById('h').innerText = Math.floor(diff/(1000*60*60)%24);
-    document.getElementById('m').innerText = Math.floor(diff/(1000*60)%60);
-    document.getElementById('s').innerText = Math.floor(diff/1000%60);
+    document.getElementById('d').innerText = Math.floor(diff/86400000);
+    document.getElementById('h').innerText = Math.floor(diff/3600000)%24;
+    document.getElementById('m').innerText = Math.floor(diff/60000)%60;
+    document.getElementById('s').innerText = Math.floor(diff/1000)%60;
   },1000);
+})
+.catch(err=>{
+  console.error("event.json error:", err);
 });
-
-const openBtn = document.getElementById('openBtn');
-const cover = document.getElementById('cover');
-const main = document.getElementById('main');
-const music = document.getElementById('bgMusic');
-const musicBtn = document.getElementById('musicBtn');
-
-openBtn.onclick = ()=>{
-  cover.style.display='none';
-  main.style.display='block';
-  music.play();
-  musicBtn.style.display='block';
-};
-
-musicBtn.onclick = ()=>{
-  music.paused ? music.play() : music.pause();
-};
 </script>
 
 </body>
