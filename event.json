@@ -1,11 +1,44 @@
 {
-  "person": "I Gusti Agung Ngurah Sidhemen",
+  "opening": {
+    "greeting": "Om Swastyastu",
+    "title": "Upacara Pitra Yadnya",
+    "subtitle": "Atas kehadiran Bapak/Ibu/Saudara/i, kami ucapkan terima kasih",
+    "buttonText": "Buka Undangan",
+    "coverImage": "assets/cover.jpg"
+  },
 
-  "dateText": "Sukra, 26 Juni 2026 | Pukul 09.00 WITA",
+  "event": {
+    "person": "I Gusti Agung Ngurah Sidhemen",
+    "dateText": "Sukra, 26 Juni 2026",
+    "timeText": "Pukul 09.00 WITA",
+    "dateISO": "2026-06-26T09:00:00+08:00"
+  },
 
-  "dateISO": "2026-06-26T09:00:00+08:00",
+  "hero": {
+    "image": "assets/hero.jpg",
+    "caption": "Foto Upacara"
+  },
 
-  "hero": "assets/hero.jpg",
+  "countdown": {
+    "enable": true
+  },
 
-  "maps": "https://www.google.com/maps?q=Puri+Padangaji+Karangasem+Bali&output=embed"
+  "location": {
+    "name": "Puri Padangaji",
+    "address": "Padangaji, Karangasem, Bali",
+    "mapsEmbed": "https://www.google.com/maps?q=Puri+Padangaji+Karangasem+Bali&output=embed",
+    "mapsLink": "https://maps.app.goo.gl/YJcuJezUdzYCQ5Ap8?g_st=iw"
+  },
+
+  "music": {
+    "enable": true,
+    "audio": "assets/music.mp3",
+    "autoPlay": false,
+    "loop": true
+  },
+
+  "footer": {
+    "thanks": "Atas doa dan kehadiran Bapak/Ibu/Saudara/i kami ucapkan terima kasih",
+    "closing": "Om Shanti Shanti Shanti Om"
+  }
 }
