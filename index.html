@@ -3,302 +3,243 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pitra Yadnya</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+<title>Upacara Pitra Yadnya</title>
 
 <style>
-:root{
-  --black:#05080d;
-  --gold:#c9a24d;
-  --gold-soft:#e7d9a6;
-  --text:#f5f5f5;
-}
-
+/* ================= RESET ================= */
 *{margin:0;padding:0;box-sizing:border-box}
 body{
-  font-family:"Playfair Display", serif;
-  background:radial-gradient(circle at top,#0b1220,#05080d);
-  color:var(--text);
+  font-family:'Georgia',serif;
+  background:#000;
+  color:#e9d8a6;
   overflow-x:hidden;
 }
 
-section{
-  padding:90px 20px;
-  text-align:center;
+/* ================= GOLD ================= */
+:root{
+  --gold:#d4af37;
+  --gold-soft:#fff1a8;
 }
 
-h1,h2{
-  color:var(--gold);
-  letter-spacing:2px;
-}
-
-p{
-  max-width:760px;
-  margin:auto;
-  line-height:1.9;
-  font-size:17px;
-}
-
-.divider{
-  width:120px;
-  height:2px;
-  background:linear-gradient(to right,transparent,var(--gold),transparent);
-  margin:30px auto;
-}
-
-/* COVER */
-#cover{
-  position:fixed;
-  inset:0;
-  background:#02040a;
+/* ================= COVER ================= */
+.cover{
+  height:100vh;
   display:flex;
-  align-items:center;
   justify-content:center;
+  align-items:center;
+  position:relative;
+}
+
+.envelope{
+  width:320px;
+  height:220px;
+  position:relative;
+  cursor:pointer;
+  animation:float 3s ease-in-out infinite;
+}
+
+.envelope .body{
+  width:100%;
+  height:100%;
+  background:#111;
+  border:2px solid var(--gold);
+  border-radius:6px;
+  position:absolute;
+  z-index:1;
+}
+
+.envelope .flap{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:#111;
+  border:2px solid var(--gold);
+  clip-path:polygon(0 0,100% 0,50% 55%);
+  transform-origin:top;
+  transition:transform 1.2s ease;
+  z-index:2;
+}
+
+.envelope.open .flap{
+  transform:rotateX(180deg);
+}
+
+.envelope .seal{
+  position:absolute;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  background:radial-gradient(circle,var(--gold-soft),var(--gold));
+  box-shadow:0 0 15px rgba(212,175,55,.8);
+  z-index:3;
+}
+
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+}
+
+/* ================= CONTENT ================= */
+.content{
+  display:none;
+  padding:100px 20px;
+  text-align:center;
+  position:relative;
+}
+
+.content.show{display:block}
+
+/* ================= ORNAMEN ================= */
+.ornamen{
+  position:absolute;
+  width:100%;
+  left:0;
+  z-index:0;
+  opacity:0;
+  animation:ornamenIn 2s forwards;
+}
+.ornamen svg{width:100%}
+.ornamen path{
+  fill:none;
+  stroke:var(--gold);
+  stroke-width:2.5;
+  filter:drop-shadow(0 0 6px rgba(212,175,55,.6));
+}
+.ornamen.top{top:0}
+.ornamen.bottom{bottom:0}
+@keyframes ornamenIn{
+  from{opacity:0;transform:translateY(-20px)}
+  to{opacity:1;transform:none}
+}
+
+/* ================= FOTO ================= */
+.photo{
+  width:220px;
+  height:220px;
+  border-radius:50%;
+  border:4px solid var(--gold);
+  margin:0 auto 30px;
+  background:url('assets/foto.jpg') center/cover;
+  box-shadow:0 0 25px rgba(212,175,55,.7);
+}
+
+/* ================= MUSIC ================= */
+.music-btn{
+  position:fixed;
+  top:20px;
+  right:20px;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:radial-gradient(circle,var(--gold-soft),var(--gold));
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:22px;
+  cursor:pointer;
+  box-shadow:0 0 20px rgba(212,175,55,.8);
+  animation:spin 6s linear infinite;
   z-index:999;
 }
-.envelope{
-  border:1px solid var(--gold);
-  padding:50px 40px;
-  max-width:380px;
-}
-.envelope .seal{
-  font-size:20px;
-  color:var(--gold-soft);
-}
-#openInvitation{
-  margin-top:25px;
-  padding:14px 36px;
-  background:var(--gold);
-  border:none;
-  font-weight:bold;
-  cursor:pointer;
+.music-btn.paused{animation:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ================= MAP ================= */
+.map{
+  margin-top:50px;
+  border:2px solid var(--gold);
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 0 20px rgba(212,175,55,.5);
 }
 
-/* HERO */
-.hero{
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  gap:20px;
-}
-.hero img{
-  width:160px;
-  opacity:.9;
-}
-.hero h1{font-size:44px}
-.hero h2{
-  font-size:22px;
-  font-weight:400;
-  color:var(--gold-soft);
-}
-#guestName{
-  margin-top:20px;
-  font-size:16px;
-  opacity:.9;
-}
-
-/* COUNTDOWN */
-#countdown{
-  display:flex;
-  justify-content:center;
-  gap:18px;
-  margin-top:40px;
-}
-#countdown div{
-  border:1px solid var(--gold);
-  padding:18px;
-  min-width:80px;
-}
-
-/* MAP */
-iframe{
-  width:100%;
-  max-width:820px;
-  height:360px;
-  border:0;
-}
-
-/* RSVP */
-form{
-  max-width:420px;
-  margin:40px auto 0;
-  display:grid;
-  gap:16px;
-}
-input,select,textarea{
-  padding:12px;
-  background:#0d1422;
-  color:white;
-  border:1px solid var(--gold);
-}
-button{
-  padding:14px;
-  background:var(--gold);
-  border:none;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-/* MUSIC BTN */
-#musicToggle{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:var(--gold);
-  border:none;
-  padding:14px;
-  border-radius:50%;
-  cursor:pointer;
-  z-index:50;
-}
-
-/* FOOTER */
-footer{
-  padding:40px 20px;
-  font-size:14px;
-  color:#bbb;
-}
-
-/* PARTICLES */
-#particles-js{
-  position:fixed;
-  inset:0;
-  z-index:-1;
+/* ================= MOBILE ================= */
+@media(max-width:480px){
+  .envelope{width:260px;height:180px}
+  .photo{width:180px;height:180px}
 }
 </style>
 </head>
 
 <body>
 
-<div id="particles-js"></div>
+<!-- MUSIC -->
+<audio id="music" loop>
+  <source src="assets/musik.mp3" type="audio/mpeg">
+</audio>
+<div class="music-btn paused" id="musicBtn">♫</div>
 
 <!-- COVER -->
-<section id="cover">
-  <div class="envelope">
-    <div class="seal">Om Swastyastu</div>
-    <div class="divider"></div>
-    <div id="coverTitle"></div>
-    <button id="openInvitation">Buka Undangan</button>
+<div class="cover">
+  <div class="envelope" id="envelope">
+    <div class="flap"></div>
+    <div class="body"></div>
+    <div class="seal"></div>
   </div>
-</section>
+</div>
 
-<!-- MUSIC -->
-<audio id="bgMusic" preload="auto"></audio>
-<button id="musicToggle">⏸</button>
+<!-- CONTENT -->
+<div class="content" id="content">
 
-<!-- HERO -->
-<section class="hero" data-aos="fade-up">
-  <img id="logo">
-  <h1 id="eventTitle"></h1>
-  <h2 id="eventSubtitle"></h2>
-  <div id="guestName"></div>
-</section>
-
-<!-- MANTRA -->
-<section data-aos="fade-up">
-  <div class="divider"></div>
-  <p id="mantra"></p>
-</section>
-
-<!-- COUNTDOWN -->
-<section data-aos="fade-up">
-  <h2 id="countdownLabel"></h2>
-  <div id="countdown">
-    <div><span id="days"></span><br>Hari</div>
-    <div><span id="hours"></span><br>Jam</div>
-    <div><span id="minutes"></span><br>Menit</div>
-    <div><span id="seconds"></span><br>Detik</div>
+  <!-- ORNAMEN -->
+  <div class="ornamen top">
+    <svg viewBox="0 0 800 200">
+      <path d="M400 10 C520 80 680 0 760 60" />
+    </svg>
   </div>
-</section>
 
-<!-- LOCATION -->
-<section data-aos="fade-up">
-  <h2>Lokasi Upacara</h2>
-  <div class="divider"></div>
-  <p id="locationText"></p>
-  <iframe id="map"></iframe>
-</section>
+  <div class="ornamen bottom">
+    <svg viewBox="0 0 800 200">
+      <path d="M400 190 C520 120 680 200 760 140" />
+    </svg>
+  </div>
 
-<!-- RSVP -->
-<section id="rsvpSection" data-aos="fade-up">
-  <h2 id="rsvpTitle"></h2>
-  <div class="divider"></div>
-  <form id="rsvpForm">
-    <input name="nama" placeholder="Nama" required>
-    <select name="kehadiran">
-      <option>Hadir</option>
-      <option>Tidak Hadir</option>
-    </select>
-    <textarea name="ucapan" placeholder="Ucapan"></textarea>
-    <button>Kirim RSVP</button>
-  </form>
-</section>
+  <div class="photo"></div>
 
-<!-- FOOTER -->
-<footer>
-  <p id="closing"></p>
-  <p id="footer"></p>
-</footer>
+  <h1>I Gusti Agung Ngurah Sidhemen</h1>
+  <p>Upacara Pitra Yadnya</p>
+  <p>Sukra, 26 Juni 2026</p>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+  <!-- MAP -->
+  <div class="map">
+    <iframe
+      src="https://www.google.com/maps?q=Bali&output=embed"
+      width="100%" height="300" style="border:0" loading="lazy">
+    </iframe>
+  </div>
+
+</div>
 
 <script>
-AOS.init();
-const music=document.getElementById("bgMusic");
+const envelope=document.getElementById('envelope');
+const content=document.getElementById('content');
+const music=document.getElementById('music');
+const musicBtn=document.getElementById('musicBtn');
 
-/* LOAD JSON */
-fetch("event.json").then(r=>r.json()).then(d=>{
-  coverTitle.innerText=d.cover.title;
-  eventTitle.innerText=d.event.title;
-  eventSubtitle.innerText=d.event.subtitle;
-  mantra.innerText=d.event.mantra;
-  logo.src=d.design.logo;
-  music.src=d.music.audioUrl;
-  music.loop=d.music.loop;
-  music.volume=d.music.volume;
+envelope.onclick=()=>{
+  envelope.classList.add('open');
+  setTimeout(()=>{
+    document.querySelector('.cover').style.display='none';
+    content.classList.add('show');
+    music.play();
+    musicBtn.classList.remove('paused');
+  },1200);
+};
 
-  locationText.innerText=d.location.place+" – "+d.location.address;
-  map.src=d.location.mapsUrl.replace("maps.app.goo.gl","www.google.com/maps/embed?pb=");
-
-  rsvpTitle.innerText=d.rsvp.title;
-  closing.innerText=d.family.closingMessage;
-  footer.innerText="© "+d.footer.year+" "+d.footer.credit;
-
-  const p=new URLSearchParams(location.search);
-  if(p.get("to")) guestName.innerText="Kepada Yth: "+p.get("to");
-
-  const target=new Date(d.datetime.date+"T"+d.datetime.startTime+":00");
-  setInterval(()=>{
-    const diff=target-new Date();
-    days.innerText=Math.floor(diff/86400000);
-    hours.innerText=Math.floor(diff/3600000)%24;
-    minutes.innerText=Math.floor(diff/60000)%60;
-    seconds.innerText=Math.floor(diff/1000)%60;
-  },1000);
-});
-
-/* OPEN */
-openInvitation.onclick=()=>{
-  gsap.to("#cover",{opacity:0,duration:1.6,onComplete:()=>cover.remove()});
-  music.play().catch(()=>{});
-}
-
-/* MUSIC TOGGLE */
-musicToggle.onclick=()=>{
-  if(music.paused){music.play();musicToggle.innerText="⏸";}
-  else{music.pause();musicToggle.innerText="▶";}
-}
-
-/* PARTICLES */
-particlesJS("particles-js",{
-  particles:{number:{value:60},color:{value:"#c9a24d"},move:{speed:0.6},size:{value:2}}
-});
+musicBtn.onclick=()=>{
+  if(music.paused){
+    music.play();
+    musicBtn.classList.remove('paused');
+  }else{
+    music.pause();
+    musicBtn.classList.add('paused');
+  }
+};
 </script>
 
 </body>
