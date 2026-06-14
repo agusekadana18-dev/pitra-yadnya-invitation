@@ -3,198 +3,151 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pitra Yadnya</title>
+<title>Upacara Pitra Yadnya</title>
 
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
 :root{
   --gold:#d4af37;
-  --gold-soft:#f4e7a1;
-  --black:#050505;
+  --bg:#0b0b0b;
+  --text:#ffffff;
 }
 
-*{margin:0;padding:0;box-sizing:border-box;font-family:Georgia,serif}
-body{background:var(--black);color:#fff;overflow-x:hidden}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:Poppins,sans-serif;
+  text-align:center;
+}
 
-/* ===== COVER ===== */
+/* COVER */
 #cover{
-  position:fixed;inset:0;
-  background:radial-gradient(circle at top,#111,#000 70%);
-  display:flex;flex-direction:column;
-  justify-content:center;align-items:center;
-  z-index:10;transition:1.5s
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(180deg,#000,#111);
 }
-.envelope{
-  width:280px;height:180px;
-  border:2px solid var(--gold);
-  position:relative;margin-bottom:30px
+#cover h1{
+  font-family:'Playfair Display',serif;
+  color:var(--gold);
+  font-size:32px;
+  margin-bottom:30px;
 }
-.envelope::before,.envelope::after{
-  content:'';position:absolute;top:0;
-  width:50%;height:100%;
-  background:#000;border:2px solid var(--gold);
-  transition:1.2s
-}
-.envelope::before{left:0;border-right:none}
-.envelope::after{right:0;border-left:none}
-.envelope.open::before{transform:rotateY(-140deg)}
-.envelope.open::after{transform:rotateY(140deg)}
-
 #openBtn{
   padding:14px 40px;
   border:1px solid var(--gold);
   background:transparent;
   color:var(--gold);
-  letter-spacing:2px;
-  cursor:pointer
+  font-size:16px;
+  cursor:pointer;
+  transition:.3s;
 }
-#openBtn:hover{background:var(--gold);color:#000}
-
-/* ===== CONTENT ===== */
-#content{opacity:0;transition:2s}
-
-/* ===== HERO ===== */
-.hero{
-  min-height:100vh;
-  display:flex;flex-direction:column;
-  justify-content:center;align-items:center;
-  text-align:center;padding:40px 20px
+#openBtn:hover{
+  background:var(--gold);
+  color:#000;
 }
-.hero img{
-  width:200px;
-  margin-bottom:20px;
-  border:2px solid var(--gold);
-}
-.hero h2{color:var(--gold);margin-bottom:10px}
-.hero p{max-width:600px;opacity:.85}
 
-/* ===== ORNAMEN ===== */
+/* ORNAMENT */
 .ornament{
-  width:100%;height:70px;
-  background:url("data:image/svg+xml;utf8,
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80'>
-<path fill='%23d4af37' fill-opacity='0.25'
-d='M0,40 Q180,5 360,40 T720,40 T1080,40 T1440,40'/>
-</svg>") center/contain no-repeat
+  width:160px;
+  margin:20px auto;
 }
 
-/* ===== COUNTDOWN ===== */
-#countdown{
-  display:flex;justify-content:center;
-  gap:20px;margin:40px 0;flex-wrap:wrap
+/* MAIN */
+#main{
+  display:none;
+  padding:60px 20px;
+  max-width:900px;
+  margin:auto;
 }
-.time{
-  border:1px solid var(--gold);
-  padding:14px 18px;min-width:70px;
-  text-align:center
+.hero{
+  max-width:100%;
+  border:3px solid var(--gold);
+  margin:30px 0;
 }
-.time span{display:block;font-size:24px;color:var(--gold)}
+h2{
+  font-family:'Playfair Display',serif;
+  color:var(--gold);
+  margin:20px 0;
+}
 
-/* ===== MAP ===== */
-.map iframe{
-  width:100%;height:320px;
-  border:none;filter:grayscale(1) brightness(.8)
-}
-
-/* ===== MUSIC ===== */
+/* MUSIC BUTTON */
 #musicBtn{
-  position:fixed;bottom:20px;right:20px;
-  width:48px;height:48px;
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:var(--gold);
+  color:#000;
+  border:none;
   border-radius:50%;
-  border:1px solid var(--gold);
-  display:none;align-items:center;justify-content:center;
-  cursor:pointer
+  width:50px;
+  height:50px;
+  font-size:18px;
+  cursor:pointer;
 }
-.spin{animation:spin 4s linear infinite}
-@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
-
-footer{text-align:center;padding:30px;opacity:.6}
 </style>
 </head>
 
 <body>
 
 <!-- COVER -->
-<div id="cover">
-  <div class="envelope"></div>
-  <h1 id="eventTitle"></h1>
-  <button id="openBtn">BUKA UNDANGAN</button>
-</div>
+<section id="cover">
+  <h1>Upacara Pitra Yadnya</h1>
+  <button id="openBtn">Buka Undangan</button>
+</section>
+
+<!-- MAIN -->
+<section id="main">
+
+  <!-- ORNAMENT SVG -->
+  <svg class="ornament" viewBox="0 0 200 40">
+    <path d="M10 20 Q100 -20 190 20 Q100 60 10 20Z" fill="none" stroke="#d4af37" stroke-width="2"/>
+  </svg>
+
+  <p>Om Swastyastu</p>
+  <h2 id="personName"></h2>
+  <p id="eventDate"></p>
+
+  <img id="heroImage" class="hero" src="" alt="Foto Upacara">
+
+</section>
 
 <!-- MUSIC -->
-<audio id="music" loop></audio>
-<div id="musicBtn">♪</div>
+<audio id="bgMusic" loop>
+  <source src="assets/musik.mp3" type="audio/mpeg">
+</audio>
+<button id="musicBtn" style="display:none;">♫</button>
 
-<!-- CONTENT -->
-<div id="content">
-
-<section class="hero" data-aos="fade-up">
-  <img id="heroImage" alt="Hero">
-  <h2 id="eventName"></h2>
-  <p id="mantra"></p>
-  <p id="guestName" style="color:var(--gold-soft);margin-top:10px"></p>
-</section>
-
-<div class="ornament"></div>
-
-<section id="countdown"></section>
-
-<section class="map">
-  <iframe id="maps"></iframe>
-</section>
-
-<footer id="footerText"></footer>
-
-</div>
-
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
-AOS.init({duration:1200,once:true});
-
 fetch('event.json')
 .then(r=>r.json())
-.then(d=>{
-  eventTitle.textContent=d.event.title;
-  eventName.textContent=d.event.name;
-  mantra.textContent=d.event.mantra;
-  heroImage.src=d.assets.heroImage;
-  music.src=d.assets.music;
-  maps.src=d.location.mapsEmbed;
-  footerText.textContent=d.family.footer;
-
-  const target=new Date(d.event.dateTime).getTime();
-  setInterval(()=>{
-    const now=Date.now(),x=target-now;if(x<0)return;
-    countdown.innerHTML=`
-      <div class="time"><span>${Math.floor(x/86400000)}</span>Hari</div>
-      <div class="time"><span>${Math.floor(x%86400000/3600000)}</span>Jam</div>
-      <div class="time"><span>${Math.floor(x%3600000/60000)}</span>Menit</div>
-      <div class="time"><span>${Math.floor(x%60000/1000)}</span>Detik</div>`;
-  },1000);
+.then(data=>{
+  document.getElementById('personName').innerText = data.invitation.personName;
+  document.getElementById('eventDate').innerText =
+    data.invitation.date.day + ', ' + data.invitation.date.fullDate;
+  document.getElementById('heroImage').src = data.media.photo.file;
 });
 
-/* Nama tamu dari URL */
-const guest=new URLSearchParams(location.search).get('to');
-if(guest) guestName.textContent="Kepada Yth. "+guest;
+const openBtn = document.getElementById('openBtn');
+const cover = document.getElementById('cover');
+const main = document.getElementById('main');
+const music = document.getElementById('bgMusic');
+const musicBtn = document.getElementById('musicBtn');
 
-/* OPEN INVITATION */
-openBtn.onclick=()=>{
-  document.querySelector('.envelope').classList.add('open');
-  setTimeout(()=>{
-    cover.style.opacity=0;
-    setTimeout(()=>cover.style.display='none',1500);
-    content.style.opacity=1;
-    music.play().catch(()=>{});
-    musicBtn.style.display='flex';
-    musicBtn.classList.add('spin');
-  },800);
+openBtn.onclick = ()=>{
+  cover.style.display='none';
+  main.style.display='block';
+  music.play();
+  musicBtn.style.display='block';
 };
 
-/* MUSIC TOGGLE */
-musicBtn.onclick=()=>{
-  music.paused?(music.play(),musicBtn.classList.add('spin'))
-               :(music.pause(),musicBtn.classList.remove('spin'));
+musicBtn.onclick = ()=>{
+  if(music.paused){music.play();musicBtn.innerText='♫'}
+  else{music.pause();musicBtn.innerText='⏸'}
 };
 </script>
 
