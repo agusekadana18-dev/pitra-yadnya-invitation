@@ -17,12 +17,12 @@
   },
 
   "assets": {
-    "heroImage": "assets/img/hero.jpg",
-    "music": "assets/audio/music.mp3"
+    "heroImage": "assets/hero.jpg",
+    "music": "assets/musik.mp3"
   },
 
   "location": {
-    "mapsEmbed": "https://www.google.com/maps?q=Puri+Padangaji+Bali&output=embed"
+    "mapsEmbed": "https://maps.app.goo.gl/YJcuJezUdzYCQ5Ap8?g_st=iw+Bali&output=embed"
   },
 
   "rsvp": {
