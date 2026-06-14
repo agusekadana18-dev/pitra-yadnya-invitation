@@ -3,242 +3,175 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Upacara Pitra Yadnya</title>
+<title>Pitra Yadnya</title>
 
 <style>
-/* ================= RESET ================= */
-*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --black:#071320;
+  --gold:#D4AF37;
+  --gold-light:#F4E7A1;
+  --white:#ffffff;
+}
+*{box-sizing:border-box;margin:0;padding:0;font-family:Georgia,serif;}
 body{
-  font-family:'Georgia',serif;
-  background:#000;
-  color:#e9d8a6;
+  background:var(--black);
+  color:var(--white);
+  text-align:center;
   overflow-x:hidden;
 }
+section{padding:60px 20px;}
+h1{font-size:42px;color:var(--gold);}
+h2{font-size:26px;color:var(--gold-light);margin-top:10px;}
+p{max-width:700px;margin:20px auto;line-height:1.8}
 
-/* ================= GOLD ================= */
-:root{
-  --gold:#d4af37;
-  --gold-soft:#fff1a8;
-}
-
-/* ================= COVER ================= */
-.cover{
-  height:100vh;
+/* COVER */
+#cover{
+  position:fixed;
+  inset:0;
+  background:radial-gradient(circle,var(--black),#000);
   display:flex;
-  justify-content:center;
   align-items:center;
-  position:relative;
+  justify-content:center;
+  z-index:999;
 }
-
 .envelope{
   width:320px;
-  height:220px;
-  position:relative;
-  cursor:pointer;
+  padding:40px 20px;
+  border:2px solid var(--gold);
+  background:#000;
   animation:float 3s ease-in-out infinite;
 }
-
-.envelope .body{
-  width:100%;
-  height:100%;
-  background:#111;
-  border:2px solid var(--gold);
-  border-radius:6px;
-  position:absolute;
-  z-index:1;
-}
-
-.envelope .flap{
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:#111;
-  border:2px solid var(--gold);
-  clip-path:polygon(0 0,100% 0,50% 55%);
-  transform-origin:top;
-  transition:transform 1.2s ease;
-  z-index:2;
-}
-
-.envelope.open .flap{
-  transform:rotateX(180deg);
-}
-
-.envelope .seal{
-  position:absolute;
-  bottom:20px;
-  left:50%;
-  transform:translateX(-50%);
-  width:40px;
-  height:40px;
-  border-radius:50%;
-  background:radial-gradient(circle,var(--gold-soft),var(--gold));
-  box-shadow:0 0 15px rgba(212,175,55,.8);
-  z-index:3;
-}
-
 @keyframes float{
   0%,100%{transform:translateY(0)}
   50%{transform:translateY(-10px)}
 }
-
-/* ================= CONTENT ================= */
-.content{
-  display:none;
-  padding:100px 20px;
-  text-align:center;
-  position:relative;
+#openBtn{
+  margin-top:30px;
+  padding:12px 30px;
+  border:none;
+  background:linear-gradient(135deg,var(--gold),var(--gold-light));
+  color:#000;
+  font-size:16px;
+  cursor:pointer;
 }
 
-.content.show{display:block}
+/* ORNAMEN */
+.ornament{
+  width:120px;
+  margin:30px auto;
+}
+svg path{fill:var(--gold);}
 
-/* ================= ORNAMEN ================= */
-.ornamen{
-  position:absolute;
+/* HERO */
+#hero img{
   width:100%;
-  left:0;
-  z-index:0;
-  opacity:0;
-  animation:ornamenIn 2s forwards;
-}
-.ornamen svg{width:100%}
-.ornamen path{
-  fill:none;
-  stroke:var(--gold);
-  stroke-width:2.5;
-  filter:drop-shadow(0 0 6px rgba(212,175,55,.6));
-}
-.ornamen.top{top:0}
-.ornamen.bottom{bottom:0}
-@keyframes ornamenIn{
-  from{opacity:0;transform:translateY(-20px)}
-  to{opacity:1;transform:none}
-}
-
-/* ================= FOTO ================= */
-.photo{
-  width:220px;
-  height:220px;
-  border-radius:50%;
+  max-width:420px;
   border:4px solid var(--gold);
-  margin:0 auto 30px;
-  background:url('assets/foto.jpg') center/cover;
-  box-shadow:0 0 25px rgba(212,175,55,.7);
+  margin-top:30px;
 }
 
-/* ================= MUSIC ================= */
-.music-btn{
-  position:fixed;
-  top:20px;
-  right:20px;
-  width:50px;
-  height:50px;
-  border-radius:50%;
-  background:radial-gradient(circle,var(--gold-soft),var(--gold));
+/* COUNTDOWN */
+#countdown{
   display:flex;
   justify-content:center;
-  align-items:center;
-  font-size:22px;
-  cursor:pointer;
-  box-shadow:0 0 20px rgba(212,175,55,.8);
-  animation:spin 6s linear infinite;
-  z-index:999;
+  gap:20px;
+  margin-top:30px;
 }
-.music-btn.paused{animation:none}
-@keyframes spin{to{transform:rotate(360deg)}}
-
-/* ================= MAP ================= */
-.map{
-  margin-top:50px;
-  border:2px solid var(--gold);
-  border-radius:10px;
-  overflow:hidden;
-  box-shadow:0 0 20px rgba(212,175,55,.5);
+.time-box{
+  border:1px solid var(--gold);
+  padding:15px;
+  min-width:70px;
 }
-
-/* ================= MOBILE ================= */
-@media(max-width:480px){
-  .envelope{width:260px;height:180px}
-  .photo{width:180px;height:180px}
+.time-box span{
+  display:block;
+  font-size:26px;
+  color:var(--gold);
+}
+footer{
+  padding:40px;
+  font-size:14px;
+  color:#aaa;
 }
 </style>
 </head>
 
 <body>
 
-<!-- MUSIC -->
-<audio id="music" loop>
-  <source src="assets/musik.mp3" type="audio/mpeg">
-</audio>
-<div class="music-btn paused" id="musicBtn">♫</div>
-
 <!-- COVER -->
-<div class="cover">
-  <div class="envelope" id="envelope">
-    <div class="flap"></div>
-    <div class="body"></div>
-    <div class="seal"></div>
+<div id="cover">
+  <div class="envelope">
+    <h2 id="coverGreeting">Om Swastyastu</h2>
+    <div class="ornament">
+      <svg viewBox="0 0 100 40">
+        <path d="M10 20 Q50 -10 90 20 Q50 50 10 20Z"/>
+      </svg>
+    </div>
+    <button id="openBtn">Buka Undangan</button>
   </div>
 </div>
 
-<!-- CONTENT -->
-<div class="content" id="content">
+<audio id="bgMusic" loop></audio>
 
-  <!-- ORNAMEN -->
-  <div class="ornamen top">
-    <svg viewBox="0 0 800 200">
-      <path d="M400 10 C520 80 680 0 760 60" />
-    </svg>
+<!-- HERO -->
+<section id="hero">
+  <h1 id="eventTitle"></h1>
+  <h2 id="eventSubtitle"></h2>
+  <img id="heroImage">
+</section>
+
+<section>
+  <p id="mantra"></p>
+
+  <div id="countdown">
+    <div class="time-box"><span id="d">0</span>Hari</div>
+    <div class="time-box"><span id="h">0</span>Jam</div>
+    <div class="time-box"><span id="m">0</span>Menit</div>
+    <div class="time-box"><span id="s">0</span>Detik</div>
   </div>
+</section>
 
-  <div class="ornamen bottom">
-    <svg viewBox="0 0 800 200">
-      <path d="M400 190 C520 120 680 200 760 140" />
-    </svg>
-  </div>
+<section>
+  <h2 id="locationName"></h2>
+  <p id="locationAddress"></p>
+  <a id="mapsLink" target="_blank" style="color:var(--gold)">Lihat di Google Maps</a>
+</section>
 
-  <div class="photo"></div>
+<section>
+  <p id="closingText"></p>
+</section>
 
-  <h1>I Gusti Agung Ngurah Sidhemen</h1>
-  <p>Upacara Pitra Yadnya</p>
-  <p>Sukra, 26 Juni 2026</p>
-
-  <!-- MAP -->
-  <div class="map">
-    <iframe
-      src="https://www.google.com/maps?q=Bali&output=embed"
-      width="100%" height="300" style="border:0" loading="lazy">
-    </iframe>
-  </div>
-
-</div>
+<footer id="footer"></footer>
 
 <script>
-const envelope=document.getElementById('envelope');
-const content=document.getElementById('content');
-const music=document.getElementById('music');
-const musicBtn=document.getElementById('musicBtn');
+fetch("event.json")
+.then(r=>r.json())
+.then(d=>{
+  eventTitle.innerText=d.eventTitle;
+  eventSubtitle.innerText=d.eventSubtitle;
+  mantra.innerText=d.mantra;
+  heroImage.src=d.heroImage;
+  locationName.innerText=d.locationName;
+  locationAddress.innerText=d.locationAddress;
+  mapsLink.href=d.mapsUrl;
+  closingText.innerText=d.closingText;
+  footer.innerText=d.footer;
+  bgMusic.src=d.musicSrc;
 
-envelope.onclick=()=>{
-  envelope.classList.add('open');
-  setTimeout(()=>{
-    document.querySelector('.cover').style.display='none';
-    content.classList.add('show');
-    music.play();
-    musicBtn.classList.remove('paused');
-  },1200);
-};
+  const target=new Date(d.eventDate).getTime();
+  setInterval(()=>{
+    const now=Date.now();
+    const diff=target-now;
+    d.innerText=Math.floor(diff/86400000);
+    h.innerText=Math.floor(diff%86400000/3600000);
+    m.innerText=Math.floor(diff%3600000/60000);
+    s.innerText=Math.floor(diff%60000/1000);
+  },1000);
+});
 
-musicBtn.onclick=()=>{
-  if(music.paused){
-    music.play();
-    musicBtn.classList.remove('paused');
-  }else{
-    music.pause();
-    musicBtn.classList.add('paused');
-  }
+openBtn.onclick=()=>{
+  cover.style.opacity=0;
+  setTimeout(()=>cover.style.display="none",800);
+  bgMusic.play();
 };
 </script>
 
