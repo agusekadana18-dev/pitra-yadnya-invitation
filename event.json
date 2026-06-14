@@ -1,18 +1,18 @@
 {
-  "_meta_comment": "PITRA YADNYA PREMIUM BALI CONFIG",
+  "_meta": "PITRA YADNYA | PREMIUM BALI ELEGANT",
 
   "meta": {
-    "version": "2.0",
-    "private": false,
-    "countdown": true,
+    "version": "2.1",
     "guestNameFromUrl": true,
-    "envelopeAnimation": true
+    "envelopeAnimation": true,
+    "countdown": true,
+    "particles": true
   },
 
   "event": {
     "title": "Pitra Yadnya",
     "subtitle": "I Gusti Agung Ngurah Sidhemen",
-    "description": "Om Purnamadah Purnamidam Purnat Purnamudachyate. Purnasya Purnamadaya Purnamevavashishyate."
+    "mantra": "Om Purnamadah Purnamidam Purnat Purnamudachyate. Purnasya Purnamadaya Purnamevavashishyate."
   },
 
   "family": {
@@ -27,35 +27,26 @@
   },
 
   "location": {
-    "name": "PURI PADANGAJI",
+    "place": "Puri Padangaji",
     "address": "Dusun Padangaji, Desa Peringsari, Kecamatan Selat, Kabupaten Karangasem, Bali",
-    "mapsLink": "https://maps.app.goo.gl/YJcuJezUdzYCQ5Ap8?g_st=iw"
+    "mapsUrl": "https://maps.app.goo.gl/YJcuJezUdzYCQ5Ap8"
   },
 
   "cover": {
     "title": "Undangan Pitra Yadnya",
-    "subtitle": "Dengan hormat mengundang Bapak/Ibu/Saudara/i untuk menghadiri rangkaian upacara Pitra Yadnya",
+    "subtitle": "Dengan hormat mengundang Bapak/Ibu/Saudara/i untuk menghadiri upacara Pitra Yadnya",
     "buttonText": "Buka Undangan"
   },
 
   "design": {
-    "theme": "balinese-luxury",
-    "backgroundColor": "#071320",
-    "accentColor": "#D4AF37",
-    "secondaryGold": "#F4E7A1",
+    "theme": "balinese-luxury-dark",
+    "background": "#071320",
+    "goldPrimary": "#D4AF37",
+    "goldSecondary": "#F4E7A1",
     "textColor": "#FFFFFF",
-
-    "ornamentStyle": "balinese-gold",
-    "particleEffect": true,
-
+    "ornament": "balinese-gold",
     "heroImage": "https://drive.google.com/uc?export=view&id=1dk7s9-HqXeX8eNwuu7enUe6IBHgMndqe",
-
     "logo": "https://drive.google.com/uc?export=view&id=1HW-e0Z4IWGjiK0KSjh3LpYHUjUrR39AP"
-  },
-
-  "countdown": {
-    "enabled": true,
-    "title": "Menuju Hari Upacara"
   },
 
   "music": {
@@ -66,6 +57,11 @@
     "audioUrl": "https://drive.google.com/uc?export=download&id=1AwOZDP0H3VpgPz1Iv-16AMjUdCLZWxta"
   },
 
+  "countdown": {
+    "enabled": true,
+    "label": "Menuju Hari Upacara"
+  },
+
   "rsvp": {
     "enabled": true,
     "title": "Konfirmasi Kehadiran",
@@ -73,7 +69,7 @@
   },
 
   "footer": {
-    "copyright": "2026",
-    "author": "Keluarga Besar Puri Padangaji"
+    "year": "2026",
+    "credit": "Keluarga Besar Puri Padangaji"
   }
 }
