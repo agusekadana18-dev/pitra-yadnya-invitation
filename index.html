@@ -21,46 +21,41 @@ body{
   background:var(--bg);
   color:var(--text);
   text-align:center;
+  line-height:1.7;
 }
 
 /* ===== COVER ===== */
 #cover{
   min-height:100vh;
   display:flex;
-  flex-direction:column;
   justify-content:center;
   align-items:center;
   background:linear-gradient(180deg,#000,#111);
+  padding:40px 20px;
 }
-
-.cover-photo{
-  width:220px;
-  height:220px;
-  border-radius:50%;
-  overflow:hidden;
-  border:3px solid var(--gold);
-  margin-bottom:30px;
+.cover-box{
+  max-width:500px;
 }
-.cover-photo img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
+.cover-box h4{
+  letter-spacing:2px;
+  margin-bottom:8px;
 }
-
-#cover h1{
+.cover-box h1{
   font-family:'Playfair Display',serif;
   color:var(--gold);
-  margin-bottom:20px;
+  font-size:36px;
 }
-
+.cover-box p{
+  margin:10px 0;
+}
 #openBtn{
-  padding:14px 42px;
+  margin-top:30px;
+  padding:14px 44px;
   border:1px solid var(--gold);
   background:transparent;
   color:var(--gold);
   font-size:16px;
   cursor:pointer;
-  transition:.3s;
 }
 #openBtn:hover{
   background:var(--gold);
@@ -70,49 +65,73 @@ body{
 /* ===== MAIN ===== */
 #main{
   display:none;
-  padding:60px 20px;
-  max-width:900px;
+  max-width:1000px;
   margin:auto;
+  padding:60px 20px;
+}
+
+.section{
+  margin:80px 0;
 }
 
 .ornament{
-  width:220px;
-  margin:30px auto;
+  font-size:28px;
+  color:var(--gold);
+  margin-bottom:20px;
 }
 
-.hero{
+/* HERO SECTION */
+.hero-wrap{
+  display:flex;
+  gap:40px;
+  flex-wrap:wrap;
+  align-items:flex-start;
+}
+.hero-img{
+  flex:1;
+  min-width:260px;
+}
+.hero-img img{
   width:100%;
-  max-width:420px;
   border:3px solid var(--gold);
-  margin:30px auto;
 }
-
-h2{
+.hero-text{
+  flex:1;
+  text-align:left;
+}
+.hero-text h3{
   font-family:'Playfair Display',serif;
   color:var(--gold);
-  margin:20px 0;
+  margin-bottom:10px;
+}
+.hero-text h2{
+  font-family:'Playfair Display',serif;
+  color:var(--gold);
+}
+.hero-text ul{
+  margin:15px 0;
+  padding-left:18px;
 }
 
-/* Countdown */
+/* COUNTDOWN */
 #countdown{
   display:flex;
   justify-content:center;
-  gap:16px;
-  margin:30px 0;
+  gap:18px;
   flex-wrap:wrap;
 }
 .cd-box{
   border:1px solid var(--gold);
-  padding:12px 18px;
-  min-width:80px;
+  padding:14px 18px;
+  min-width:90px;
 }
 .cd-box span{
   display:block;
-  font-size:22px;
+  font-size:24px;
   color:var(--gold);
 }
 
-/* Maps */
+/* MAPS */
 iframe{
   width:100%;
   height:320px;
@@ -120,7 +139,7 @@ iframe{
   margin-top:20px;
 }
 
-/* Music */
+/* MUSIC */
 #musicBtn{
   position:fixed;
   right:20px;
@@ -141,115 +160,121 @@ iframe{
 
 <!-- COVER -->
 <section id="cover">
-  <div class="cover-photo">
-    <img src="assets/cover.jpg" alt="Cover">
+  <div class="cover-box">
+    <h4>Upacara</h4>
+    <h1>Pitra Yadnya</h1>
+    <p><strong>I Gusti Agung Ngurah Sidhemen</strong></p>
+    <p>Sukra, 26 Juni 2026</p>
+    <br>
+    <p>Kepada Yth.</p>
+    <p><strong>Bapak / Ibu</strong></p>
+    <button id="openBtn">Buka Undangan</button>
   </div>
-  <h1>Upacara Pitra Yadnya</h1>
-  <button id="openBtn">Buka Undangan</button>
 </section>
 
 <!-- MAIN -->
 <section id="main">
 
-  <!-- Ornament Bali -->
-  <svg class="ornament" viewBox="0 0 200 40">
-    <path d="M10 20 Q100 -30 190 20 Q100 70 10 20Z" fill="none" stroke="#d4af37" stroke-width="2"/>
-  </svg>
-
-  <p>Om Swastyastu</p>
-  <h2 id="personName">—</h2>
-  <p id="eventDate">—</p>
-
-  <img id="heroImage" class="hero" src="" alt="Foto Upacara">
-
-  <!-- COUNTDOWN -->
-  <div id="countdown">
-    <div class="cd-box"><span id="d">0</span>Hari</div>
-    <div class="cd-box"><span id="h">0</span>Jam</div>
-    <div class="cd-box"><span id="m">0</span>Menit</div>
-    <div class="cd-box"><span id="s">0</span>Detik</div>
+  <!-- PEMBUKA -->
+  <div class="section">
+    <div class="ornament">ᬒᬫ᭄</div>
+    <p><strong>Om Swastyastu</strong></p>
+    <p>
+      Dengan memohon Asung Kerta Wara Nugraha Ida Sang Hyang Widhi Wasa / Tuhan Yang Maha Esa,
+      kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk menghadiri
+      Upacara Pitra Yadnya (Ngaben).
+    </p>
   </div>
 
-  <h2>Lokasi Upacara</h2>
-  <iframe id="maps" loading="lazy"></iframe>
+  <!-- HERO -->
+  <div class="section hero-wrap">
+    <div class="hero-img">
+      <img src="assets/hero.jpg" alt="Foto Upacara">
+    </div>
+    <div class="hero-text">
+      <h3>In Loving Memory</h3>
+      <h2>I Gusti Agung Ngurah Sidhemen</h2>
+      <p>Ayah Tercinta Dari:</p>
+      <ul>
+        <li>I Gst. Ag. Bgs. Herry Setyawan</li>
+        <li>I Gst. Ag. Bgs. Herry Gunawan</li>
+        <li>I Gst. Ag. Ayu Krisnayanthi</li>
+        <li>I Gst. Ag. Ayu Purnamayanthi</li>
+        <li>I Gst. Ag. Bgs. Surya Adiputra</li>
+      </ul>
+      <p>
+        Telah berpulang dengan tenang dan damai.
+        Semoga Ida Sang Hyang Widhi Wasa / Tuhan Yang Maha Esa
+        menerima dan menempatkan beliau di tempat terbaik.
+      </p>
+    </div>
+  </div>
+
+  <!-- COUNTDOWN -->
+  <div class="section">
+    <h2>Menuju Hari Acara</h2>
+    <div id="countdown">
+      <div class="cd-box"><span id="d">0</span>Hari</div>
+      <div class="cd-box"><span id="h">0</span>Jam</div>
+      <div class="cd-box"><span id="m">0</span>Menit</div>
+      <div class="cd-box"><span id="s">0</span>Detik</div>
+    </div>
+  </div>
+
+  <!-- MAPS -->
+  <div class="section">
+    <h2>Lokasi Upacara</h2>
+    <p>Dusun Padangaji, Desa Peringsari, Kec Selat, Kab. Karangasem</p>
+    <iframe id="maps" loading="lazy"></iframe>
+  </div>
+
+  <!-- PENUTUP -->
+  <div class="section">
+    <div class="ornament">ᬒᬫ᭄</div>
+    <p>
+      Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i
+      berkenan hadir memberikan doa restu.
+    </p>
+    <p><strong>Om Shanti Shanti Shanti Om</strong></p>
+    <br>
+    <p><strong>I Gusti Agung Ngurah Sidhemen</strong></p>
+    <p>& Keluarga Besar</p>
+  </div>
 
 </section>
 
 <!-- MUSIC -->
-<audio id="bgMusic" loop>
-  <source src="assets/musik.mp3" type="audio/mpeg">
-</audio>
+<audio id="bgMusic" loop></audio>
 <button id="musicBtn" style="display:none;">♫</button>
 
 <script>
 fetch('event.json')
-  .then(res => {
-    if (!res.ok) throw new Error('event.json tidak terbaca');
-    return res.json();
-  })
-  .then(data => {
+.then(res=>res.json())
+.then(data=>{
+  document.getElementById('maps').src = data.location.mapsEmbed;
 
-    /* OPENING / COVER */
-    document.querySelector('#cover h1').innerText = data.opening.title;
-    document.querySelector('#openBtn').innerText = data.opening.buttonText;
-    document.querySelector('.cover-photo img').src = data.opening.coverImage;
+  const target = new Date(data.event.dateISO).getTime();
+  setInterval(()=>{
+    const now = Date.now();
+    const diff = target - now;
+    if(diff<=0) return;
+    d.innerText = Math.floor(diff/86400000);
+    h.innerText = Math.floor(diff/3600000)%24;
+    m.innerText = Math.floor(diff/60000)%60;
+    s.innerText = Math.floor(diff/1000)%60;
+  },1000);
 
-    /* EVENT */
-    document.getElementById('personName').innerText = data.event.person;
-    document.getElementById('eventDate').innerText =
-      data.event.dateText + ' | ' + data.event.timeText;
-
-    /* HERO */
-    document.getElementById('heroImage').src = data.hero.image;
-
-    /* MAPS */
-    document.getElementById('maps').src = data.location.mapsEmbed;
-
-    /* COUNTDOWN */
-    if (data.countdown.enable) {
-      const target = new Date(data.event.dateISO).getTime();
-      setInterval(() => {
-        const now = new Date().getTime();
-        const diff = target - now;
-        if (diff <= 0) return;
-
-        document.getElementById('d').innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
-        document.getElementById('h').innerText = Math.floor(diff / (1000 * 60 * 60) % 24);
-        document.getElementById('m').innerText = Math.floor(diff / (1000 * 60) % 60);
-        document.getElementById('s').innerText = Math.floor(diff / 1000 % 60);
-      }, 1000);
-    }
-
-    /* MUSIC */
-    const music = document.getElementById('bgMusic');
-    if (data.music.enable) {
-      music.src = data.music.audio;
-      music.loop = data.music.loop;
-    }
-
-  })
-  .catch(err => {
-    console.error('ERROR:', err);
-    alert('Data undangan gagal dimuat. Cek event.json');
-  });
-
-/* OPEN BUTTON */
-const openBtn = document.getElementById('openBtn');
-const cover = document.getElementById('cover');
-const main = document.getElementById('main');
-const music = document.getElementById('bgMusic');
-const musicBtn = document.getElementById('musicBtn');
-
-openBtn.onclick = () => {
-  cover.style.display = 'none';
-  main.style.display = 'block';
-  musicBtn.style.display = 'block';
-};
-
-/* MUSIC TOGGLE */
-musicBtn.onclick = () => {
-  music.paused ? music.play() : music.pause();
-};
+  const music = document.getElementById('bgMusic');
+  music.src = data.music.audio;
+});
+openBtn.onclick=()=>{
+  cover.style.display='none';
+  main.style.display='block';
+  musicBtn.style.display='block';
+}
+musicBtn.onclick=()=>{
+  bgMusic.paused?bgMusic.play():bgMusic.pause();
+}
 </script>
 
 </body>
