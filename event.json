@@ -1,19 +1,21 @@
 {
-  "eventTitle": "Pitra Yadnya",
-  "eventSubtitle": "I Gusti Agung Ngurah Sidhemen",
-  "mantra": "Om Swastyastu",
+  "title": "Pitra Yadnya",
+  "subtitle": "I Gusti Agung Ngurah Sidhemen",
 
-  "hostFamily": "Keluarga Besar Puri Padangaji",
-  "closingText": "Atas kehadiran dan doa restu Bapak/Ibu/Saudara/i, kami sekeluarga mengucapkan terima kasih.",
+  "opening": "Om Swastyastu",
+  "mantra": "Om Purnamadah Purnamidam Purnat Purnamudachyate",
 
-  "eventDate": "2026-06-26T08:00:00+08:00",
+  "date": "26 Juni 2026",
+  "time": "08.00 WITA",
 
   "locationName": "Puri Padangaji",
   "locationAddress": "Dusun Padangaji, Desa Peringsari, Kecamatan Selat, Kabupaten Karangasem, Bali",
-  "mapsUrl": "https://maps.app.goo.gl/YJcuJezUdzYCQ5Ap8",
+  "mapsEmbed": "https://www.google.com/maps?q=Puri+Padangaji+Bali&output=embed",
+
+  "family": "Keluarga Besar Puri Padangaji",
 
   "heroImage": "assets/hero.jpg",
-  "musicSrc": "assets/musik.mp3",
+  "music": "assets/musik.mp3",
 
   "footer": "© 2026 Keluarga Besar Puri Padangaji"
 }
