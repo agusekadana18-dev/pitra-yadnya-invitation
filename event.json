@@ -1,76 +1,19 @@
 {
-  "_meta": {
-    "template": "Pitra Yadnya Premium Bali",
-    "version": "1.0",
-    "autoload": true
-  },
+  "eventTitle": "Pitra Yadnya",
+  "eventSubtitle": "I Gusti Agung Ngurah Sidhemen",
+  "mantra": "Om Swastyastu",
 
-  "event": {
-    "title": "Pitra Yadnya",
-    "subtitle": "I Gusti Agung Ngurah Sidhemen",
-    "mantra": "Om Purnamadah Purnamidam Purnat Purnamudachyate"
-  },
+  "hostFamily": "Keluarga Besar Puri Padangaji",
+  "closingText": "Atas kehadiran dan doa restu Bapak/Ibu/Saudara/i, kami sekeluarga mengucapkan terima kasih.",
 
-  "family": {
-    "host": "Keluarga Besar Puri Padangaji",
-    "closing": "Atas kehadiran serta doa restu Bapak/Ibu/Saudara/i, kami sekeluarga mengucapkan terima kasih."
-  },
+  "eventDate": "2026-06-26T08:00:00+08:00",
 
-  "datetime": {
-    "date": "2026-06-26",
-    "time": "08:00",
-    "timezone": "Asia/Makassar"
-  },
+  "locationName": "Puri Padangaji",
+  "locationAddress": "Dusun Padangaji, Desa Peringsari, Kecamatan Selat, Kabupaten Karangasem, Bali",
+  "mapsUrl": "https://maps.app.goo.gl/YJcuJezUdzYCQ5Ap8",
 
-  "location": {
-    "place": "Puri Padangaji",
-    "address": "Dusun Padangaji, Desa Peringsari, Kecamatan Selat, Kabupaten Karangasem, Bali",
-    "maps": "https://maps.app.goo.gl/YJcuJezUdzYCQ5Ap8"
-  },
+  "heroImage": "assets/hero.jpg",
+  "musicSrc": "assets/musik.mp3",
 
-  "cover": {
-    "greeting": "Om Swastyastu",
-    "title": "Undangan Pitra Yadnya",
-    "button": "Buka Undangan"
-  },
-
-  "design": {
-    "theme": "black-gold",
-    "background": "#071320",
-    "gold": "#D4AF37",
-    "goldLight": "#F4E7A1",
-    "text": "#FFFFFF",
-
-    "heroImage": "assets/hero.jpg",
-    "ornament": true,
-    "particles": true
-  },
-
-  "music": {
-    "enabled": true,
-    "autoplay": false,
-    "loop": true,
-    "volume": 0.7,
-    "src": "assets/musik.mp3"
-  },
-
-  "countdown": {
-    "enabled": true,
-    "label": "Menuju Hari Upacara"
-  },
-
-  "guest": {
-    "fromUrl": true,
-    "defaultName": "Bapak / Ibu / Saudara / i"
-  },
-
-  "rsvp": {
-    "enabled": false,
-    "endpoint": ""
-  },
-
-  "footer": {
-    "year": "2026",
-    "author": "Keluarga Besar Puri Padangaji"
-  }
+  "footer": "© 2026 Keluarga Besar Puri Padangaji"
 }
