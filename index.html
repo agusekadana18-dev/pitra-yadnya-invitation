@@ -20,253 +20,238 @@ body{
   font-family:Poppins,sans-serif;
   background:var(--bg);
   color:var(--text);
+  line-height:1.8;
 }
 
-/* ================= COVER ================= */
-#cover{
-  position:relative;
-  height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
+/* container */
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:40px 20px;
+}
+
+/* ornament */
+.orn{
   text-align:center;
-  overflow:hidden;
-  background:radial-gradient(circle at top,#1a1a1a,#000);
+  color:var(--gold);
+  font-size:24px;
+  margin:30px 0;
 }
 
-.cover-box{
-  z-index:2;
-  max-width:600px;
-  padding:20px;
-}
-
-.cover-box h1{
+/* headings */
+h1,h2,h3{
   font-family:'Playfair Display',serif;
   color:var(--gold);
-  font-size:42px;
+  text-align:center;
 }
 
-.cover-box h3{
-  letter-spacing:2px;
-  opacity:.8;
+/* section spacing */
+.section{
+  margin:60px 0;
 }
 
-#openBtn{
-  margin-top:25px;
-  padding:14px 40px;
+/* hero */
+.hero{
+  text-align:center;
+}
+
+.hero img{
+  width:160px;
+  height:160px;
+  border-radius:50%;
+  border:2px solid var(--gold);
+  object-fit:cover;
+  margin:10px auto;
+  display:block;
+}
+
+/* family list */
+ul{
+  list-style:none;
+  padding:0;
+  text-align:center;
+}
+
+/* box */
+.box{
+  border:1px solid var(--gold);
+  padding:15px;
+  margin:10px 0;
+  border-radius:8px;
+}
+
+/* countdown */
+.countdown{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.countdown div{
+  border:1px solid var(--gold);
+  padding:10px 14px;
+  min-width:70px;
+  text-align:center;
+}
+
+.countdown span{
+  font-size:22px;
+  color:var(--gold);
+  display:block;
+}
+
+/* form */
+input,textarea,select{
+  width:100%;
+  padding:10px;
+  margin:5px 0;
+  border:1px solid var(--gold);
+  background:#111;
+  color:white;
+}
+
+button{
+  padding:10px 20px;
   border:1px solid var(--gold);
   background:transparent;
   color:var(--gold);
   cursor:pointer;
-  transition:.3s;
 }
-#openBtn:hover{
+
+button:hover{
   background:var(--gold);
   color:#000;
 }
 
-/* floating ornament */
-.float span{
-  position:absolute;
-  color:rgba(212,175,55,.15);
-  font-size:22px;
-  animation:move 12s linear infinite;
-}
-
-@keyframes move{
-  0%{transform:translateY(100vh);}
-  100%{transform:translateY(-10vh);}
-}
-
-/* ================= MAIN ================= */
-#main{
-  display:none;
-  max-width:1000px;
-  margin:auto;
-  padding:60px 20px;
-}
-
-.section{
-  margin:80px 0;
-  text-align:center;
-}
-
-.orn{
-  font-size:26px;
-  color:var(--gold);
-  margin-bottom:20px;
-}
-
-/* HERO */
-.hero{
-  display:flex;
-  gap:30px;
-  flex-wrap:wrap;
-  align-items:center;
-}
-
-.hero img{
-  width:100%;
-  max-width:400px;
-  border:2px solid var(--gold);
-}
-
-.hero-text{
-  flex:1;
-  text-align:left;
-}
-
-.hero-text h2{
-  font-family:'Playfair Display',serif;
-  color:var(--gold);
-}
-
-/* COUNTDOWN */
-#countdown{
-  display:flex;
-  justify-content:center;
-  gap:15px;
-  flex-wrap:wrap;
-}
-
-.box{
-  border:1px solid var(--gold);
-  padding:12px 16px;
-  min-width:80px;
-}
-
-.box span{
-  font-size:22px;
-  color:var(--gold);
-}
-
-/* MAP */
+/* map */
 iframe{
   width:100%;
-  height:300px;
+  height:280px;
   border:0;
-}
-
-/* MUSIC */
-#musicBtn{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  width:50px;
-  height:50px;
-  border-radius:50%;
-  background:var(--gold);
-  border:none;
-  cursor:pointer;
 }
 </style>
 </head>
 
 <body>
 
-<!-- COVER -->
-<section id="cover">
-  <div class="float">
-    <span style="left:10%">ᬒᬫ᭄</span>
-    <span style="left:30%">✦</span>
-    <span style="left:60%">ᬒᬫ᭄</span>
-    <span style="left:80%">✦</span>
+<div class="container">
+
+<!-- ORNAMENT -->
+<div class="orn">ᬒᬫ᭄</div>
+
+<!-- OPENING -->
+<div class="section">
+  <h3>Om Swastyastu</h3>
+  <p style="text-align:center">
+    Dengan memohon Asung Kerta Wara Nugraha Ida Sang Hyang Widhi Wasa / Tuhan Yang Maha Esa,
+    kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk menghadiri Upacara Pitra Yadnya (Ngaben)
+    yang akan kami laksanakan.
+  </p>
+</div>
+
+<!-- FOTO -->
+<div class="section hero">
+  <h3>Foto Keluarga</h3>
+  <img src="assets/hero.jpg">
+  <h3>Foto Profil</h3>
+</div>
+
+<!-- MEMORY -->
+<div class="section">
+  <h2>In Loving Memory</h2>
+
+  <h3>I Gusti Agung Ngurah Sidhemen</h3>
+  <p style="text-align:center">Ayah Tercinta Dari:</p>
+
+  <ul>
+    <li>I Gst. Ag. Bgs. Herry Setyawan</li>
+    <li>I Gst. Ag. Bgs. Herry Gunawan</li>
+    <li>I Gst. Ag. Ayu Krisnayanthi</li>
+    <li>I Gst. Ag. Ayu Purnamayanthi</li>
+    <li>I Gst. Ag. Bgs. Surya Adiputra</li>
+  </ul>
+
+  <p style="text-align:center;margin-top:10px">
+    Telah berpulang dengan tenang dan damai.
+    Semoga Ida Sang Hyang Widhi Wasa berkenan menerima dan menempatkan beliau di tempat terbaik.
+  </p>
+</div>
+
+<!-- ACARA -->
+<div class="section">
+  <h2>Rangkaian Acara</h2>
+
+  <div class="box">
+    <b>Detail Upacara</b><br><br>
+    Tanggal: Sukra, 26 Juni 2026<br>
+    Waktu: -<br>
+    Lokasi: Dusun Padangaji, Karangasem<br>
+    Agenda: Upacara Pitra Yadnya (Ngaben)
   </div>
+</div>
 
-  <div class="cover-box">
-    <h3>Upacara</h3>
-    <h1 id="title">Pitra Yadnya</h1>
-    <p id="name">—</p>
-    <p id="date">—</p>
+<!-- COUNTDOWN -->
+<div class="section">
+  <h2>Hitung Mundur</h2>
 
-    <button id="openBtn">Buka Undangan</button>
+  <div class="countdown">
+    <div><span id="d">0</span>Hari</div>
+    <div><span id="h">0</span>Jam</div>
+    <div><span id="m">0</span>Menit</div>
+    <div><span id="s">0</span>Detik</div>
   </div>
-</section>
+</div>
 
-<!-- MAIN -->
-<section id="main">
+<!-- MAP -->
+<div class="section">
+  <h2>Lihat Lokasi Upacara</h2>
+  <p style="text-align:center">Dusun Padangaji, Karangasem</p>
+  <iframe src="https://www.google.com/maps?q=Karangasem+Bali&output=embed"></iframe>
+</div>
 
-  <div class="section">
-    <div class="orn">ᬒᬫ᭄</div>
-    <p>Om Swastyastu</p>
-    <p id="greeting"></p>
-  </div>
+<!-- UCAPAN -->
+<div class="section">
+  <h2>Ucapan & Doa</h2>
 
-  <div class="section hero">
-    <img id="heroImg">
-    <div class="hero-text">
-      <h2 id="person"></h2>
-      <p id="desc"></p>
-    </div>
-  </div>
+  <input placeholder="Nama">
+  <textarea placeholder="Ucapan & Doa"></textarea>
+  <button>Kirim Ucapan</button>
+</div>
 
-  <div class="section">
-    <h2 style="color:var(--gold)">Countdown</h2>
-    <div id="countdown">
-      <div class="box"><span id="d">0</span>Hari</div>
-      <div class="box"><span id="h">0</span>Jam</div>
-      <div class="box"><span id="m">0</span>Menit</div>
-      <div class="box"><span id="s">0</span>Detik</div>
-    </div>
-  </div>
+<!-- RSVP -->
+<div class="section">
+  <h2>RSVP</h2>
 
-  <div class="section">
-    <h2 style="color:var(--gold)">Lokasi</h2>
-    <iframe id="maps"></iframe>
-  </div>
+  <input placeholder="Nama">
 
-</section>
+  <select>
+    <option>Hadir</option>
+    <option>Tidak Hadir</option>
+  </select>
 
-<!-- MUSIC -->
-<audio id="music" loop></audio>
-<button id="musicBtn" style="display:none;">♫</button>
+  <input type="number" placeholder="Jumlah Tamu" value="1">
 
-<script>
-const cover=document.getElementById('cover');
-const main=document.getElementById('main');
-const openBtn=document.getElementById('openBtn');
-const musicBtn=document.getElementById('musicBtn');
-const music=document.getElementById('music');
+  <button>Konfirmasi Kehadiran</button>
+</div>
 
-let target;
+<!-- FOOTER -->
+<div class="section">
+  <div class="orn">ᬒᬫ᭄</div>
 
-fetch('event.json')
-.then(r=>r.json())
-.then(d=>{
+  <p style="text-align:center">
+    Om Shanti Shanti Shanti Om
+  </p>
 
-  document.getElementById('name').innerText=d.event.person;
-  document.getElementById('date').innerText=d.event.dateText;
-  document.getElementById('heroImg').src=d.hero.image;
-  document.getElementById('greeting').innerText=d.opening.greeting;
-  document.getElementById('maps').src=d.location.mapsEmbed;
+  <p style="text-align:center;margin-top:10px">
+    Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir.
+  </p>
 
-  target=new Date(d.event.dateISO).getTime();
+  <h3 style="margin-top:20px">I Gusti Agung Ngurah Sidhemen</h3>
+  <p style="text-align:center">& Keluarga Besar</p>
+</div>
 
-  setInterval(()=>{
-    let diff=target-Date.now();
-    if(diff<=0)return;
-
-    d.innerText=Math.floor(diff/86400000);
-    h.innerText=Math.floor(diff/3600000)%24;
-    m.innerText=Math.floor(diff/60000)%60;
-    s.innerText=Math.floor(diff/1000)%60;
-  },1000);
-
-  music.src=d.music.audio;
-});
-
-openBtn.onclick=async()=>{
-  cover.style.display='none';
-  main.style.display='block';
-  musicBtn.style.display='block';
-
-  try{await music.play();}catch(e){}
-};
-
-musicBtn.onclick=()=>{
-  music.paused?music.play():music.pause();
-};
-</script>
+</div>
 
 </body>
 </html>
