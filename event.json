@@ -1,0 +1,70 @@
+{
+    "_meta_comment": "TEMPLATE CONFIGURATION",
+    "meta": {
+        "version": "1.1",
+        "private": false,
+        "simpleMode": false,
+        "showSimpleModeToggle": true,
+        "countdown": true
+    },
+    "event": {
+        "title": "Pitra Yadnya",
+        "subtitle": "I Gusti Agung Ngurah Sidhemen",
+        "description": "\"Om Purnamadah Purnamidam...\""
+    },
+    "datetime": {
+        "date": "2026-06-26",
+        "startTime": "08:00 AM",
+        "endTime": "",
+        "timezone": "local",
+        "allDay": false
+    },
+    "location": {
+        "name": "PURI PADANGAJI",
+        "address": "Dusun Padangaji, Desa peringsari, Kec. Selat, Kab. Karangasem",
+        "mapsLink": "https://maps.app.goo.gl/YJcuJezUdzYCQ5Ap8?g_st=iw"
+    },
+    "schedule": [],
+    "rsvp": {
+        "enabled": false,
+        "url": ""
+    },
+    "calendar": {
+        "enabled": true,
+        "providers": {
+            "google": true
+        }
+    },
+    "design": {
+        "theme": "light",
+        "accentColor": "#000000",
+        "heroImages": [
+            "https://drive.google.com/file/d/1dk7s9-HqXeX8eNwuu7enUe6IBHgMndqe/view?usp=sharing"
+        ],
+        "sectionBackgrounds": []
+    },
+    "music": {
+        "enabled": true,
+        "loop": true,
+        "volume": 1,
+        "audioUrl": "https://drive.google.com/file/d/1AwOZDP0H3VpgPz1Iv-16AMjUdCLZWxta/view?usp=sharing"
+    },
+    "footer": {
+        "text": "",
+        "branding": {
+            "link": "#",
+            "logoUrl": "https://drive.google.com/file/d/1HW-e0Z4IWGjiK0KSjh3LpYHUjUrR39AP/view?usp=sharing",
+            "logoAlt": "Logo"
+        },
+        "credits": {
+            "designByLabel": "Created & Designed by",
+            "copyrightYear": "2026",
+            "authorName": "I Gusti Agung Ngurah Sidhemen",
+            "templateLabel": "Template by",
+            "templateAuthor": "Rainier Pearson Saputra",
+            "templateLink": "https://rainier-ps.github.io/",
+            "repoLabel": "Open Repository",
+            "repoLink": "https://github.com/Rainier-PS/Invitation-Template"
+        }
+    }
+}
