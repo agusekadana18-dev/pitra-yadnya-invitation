@@ -1,19 +1,40 @@
 {
   "opening": {
-    "greeting": "Dengan memohon Asung Kerta Wara Nugraha Ida Sang Hyang Widhi Wasa, kami mengundang Bapak/Ibu untuk hadir dalam Upacara Pitra Yadnya."
+    "ornament": "ᬒᬫ᭄",
+    "title": "Upacara Pitra Yadnya",
+    "greeting": "Dengan memohon Asung Kerta Wara Nugraha Ida Sang Hyang Widhi Wasa / Tuhan Yang Maha Esa, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk menghadiri Upacara Pitra Yadnya (Ngaben).",
+    "coverImage": "assets/cover.jpg",
+    "buttonText": "Buka Undangan"
   },
+
   "event": {
     "person": "I Gusti Agung Ngurah Sidhemen",
     "dateText": "Sukra, 26 Juni 2026",
+    "timeText": "Pukul 09.00 WITA",
     "dateISO": "2026-06-26T09:00:00+08:00"
   },
-  "hero": {
-    "image": "assets/hero.jpg"
+
+  "family": {
+    "subtitle": "Ayah Tercinta Dari:",
+    "children": [
+      "I Gst. Ag. Bgs. Herry Setyawan",
+      "I Gst. Ag. Bgs. Herry Gunawan",
+      "I Gst. Ag. Ayu Krisnayanthi",
+      "I Gst. Ag. Ayu Purnamayanthi",
+      "I Gst. Ag. Bgs. Surya Adiputra"
+    ],
+    "message": "Telah berpulang dengan tenang dan damai. Semoga Ida Sang Hyang Widhi Wasa berkenan menerima dan menempatkan beliau di tempat terbaik."
   },
+
   "location": {
+    "name": "Dusun Padangaji",
+    "address": "Desa Peringsari, Kec Selat, Karangasem",
     "mapsEmbed": "https://www.google.com/maps?q=Karangasem+Bali&output=embed"
   },
+
   "music": {
-    "audio": "assets/music.mp3"
+    "audio": "assets/music.mp3",
+    "autoplay": false,
+    "loop": true
   }
 }
