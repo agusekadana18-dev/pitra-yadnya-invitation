@@ -5,108 +5,255 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pitra Yadnya</title>
 
+<!-- AOS -->
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+
 <style>
+:root{
+  --bg:#071320;
+  --gold:#D4AF37;
+  --gold-soft:#F4E7A1;
+  --text:#ffffff;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Georgia",serif}
 body{
-    margin:0;
-    font-family:Georgia,serif;
-    background:#0f172a;
-    color:#fff;
-    text-align:center;
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
 }
 
-.hero{
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    padding:30px;
+section{padding:70px 20px;text-align:center}
+h1,h2,h3{color:var(--gold)}
+p{max-width:720px;margin:auto;line-height:1.7}
+
+/* COVER */
+#cover{
+  position:fixed;
+  inset:0;
+  background:linear-gradient(180deg,#020b13,#071320);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:999;
+}
+.envelope{
+  border:2px solid var(--gold);
+  padding:40px;
+  max-width:360px;
+}
+.envelope .seal{
+  font-size:20px;
+  margin-bottom:20px;
+}
+#openInvitation{
+  margin-top:20px;
+  padding:12px 30px;
+  background:var(--gold);
+  border:none;
+  cursor:pointer;
+  font-weight:bold;
 }
 
-h1{
-    font-size:3rem;
-    color:#d4af37;
+/* HERO */
+.hero img{
+  width:140px;
+  margin-bottom:20px;
+}
+.hero h1{font-size:38px}
+.hero h2{font-size:22px;color:var(--gold-soft)}
+
+/* COUNTDOWN */
+#countdown{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  margin-top:30px;
+}
+#countdown div{
+  border:1px solid var(--gold);
+  padding:15px;
+  min-width:70px;
 }
 
-h2{
-    color:#f5d76e;
+/* MAP */
+iframe{
+  width:100%;
+  max-width:800px;
+  height:350px;
+  border:0;
 }
 
-.card{
-    max-width:800px;
-    margin:auto;
-    padding:30px;
+/* RSVP */
+form{
+  max-width:420px;
+  margin:30px auto 0;
+  display:grid;
+  gap:15px;
+}
+input,select,textarea,button{
+  padding:12px;
+  border:none;
+}
+button{
+  background:var(--gold);
+  font-weight:bold;
+  cursor:pointer;
 }
 
-img{
-    max-width:100%;
-    border-radius:20px;
+/* FOOTER */
+footer{
+  padding:30px;
+  font-size:14px;
+  color:#ccc;
 }
 
-.btn{
-    display:inline-block;
-    margin-top:20px;
-    padding:12px 24px;
-    background:#d4af37;
-    color:#000;
-    text-decoration:none;
-    border-radius:10px;
-    font-weight:bold;
+/* PARTICLES */
+#particles-js{
+  position:fixed;
+  inset:0;
+  z-index:-1;
 }
 </style>
 </head>
 
 <body>
 
-<div class="hero">
-    <h1 id="title">Pitra Yadnya</h1>
-    <h2 id="subtitle"></h2>
-    <p id="description"></p>
-</div>
+<div id="particles-js"></div>
 
-<div class="card">
-    <img id="heroImage" src="" alt="">
-</div>
+<!-- COVER -->
+<section id="cover">
+  <div class="envelope">
+    <div class="seal">Om Swastyastu</div>
+    <div id="coverTitle"></div>
+    <button id="openInvitation">Buka Undangan</button>
+  </div>
+</section>
 
-<div class="card">
-    <h2>Lokasi Acara</h2>
-    <p id="location"></p>
-    <a id="mapsBtn" class="btn" target="_blank">
-        Buka Google Maps
-    </a>
-</div>
+<!-- MUSIC -->
+<audio id="bgMusic"></audio>
 
-<audio id="music" autoplay loop></audio>
+<!-- HERO -->
+<section class="hero" data-aos="fade-up">
+  <img id="logo">
+  <h1 id="eventTitle"></h1>
+  <h2 id="eventSubtitle"></h2>
+  <p id="guestName"></p>
+</section>
+
+<!-- MANTRA -->
+<section data-aos="fade-up">
+  <p id="mantra"></p>
+</section>
+
+<!-- COUNTDOWN -->
+<section data-aos="fade-up">
+  <h2 id="countdownLabel"></h2>
+  <div id="countdown">
+    <div><span id="days"></span><br>Hari</div>
+    <div><span id="hours"></span><br>Jam</div>
+    <div><span id="minutes"></span><br>Menit</div>
+    <div><span id="seconds"></span><br>Detik</div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section data-aos="fade-up">
+  <h2>Lokasi Upacara</h2>
+  <p id="locationText"></p>
+  <iframe id="map"></iframe>
+</section>
+
+<!-- RSVP -->
+<section id="rsvpSection" data-aos="fade-up">
+  <h2 id="rsvpTitle"></h2>
+  <form id="rsvpForm">
+    <input name="nama" placeholder="Nama" required>
+    <select name="kehadiran">
+      <option>Hadir</option>
+      <option>Tidak Hadir</option>
+    </select>
+    <textarea name="ucapan" placeholder="Ucapan"></textarea>
+    <button>Kirim RSVP</button>
+  </form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p id="closing"></p>
+  <p id="footer"></p>
+</footer>
+
+<!-- LIBS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 
 <script>
+AOS.init();
+
+/* LOAD JSON */
 fetch('event.json')
-.then(res => res.json())
-.then(data => {
+.then(res=>res.json())
+.then(data=>{
 
-document.getElementById("title").innerText =
-data.event.title;
+/* COVER */
+coverTitle.innerText=data.cover.title;
 
-document.getElementById("subtitle").innerText =
-data.event.subtitle;
+/* HERO */
+eventTitle.innerText=data.event.title;
+eventSubtitle.innerText=data.event.subtitle;
+mantra.innerText=data.event.mantra;
+logo.src=data.design.logo;
 
-document.getElementById("description").innerText =
-data.event.description;
-
-document.getElementById("location").innerText =
-data.location.name + " - " + data.location.address;
-
-document.getElementById("mapsBtn").href =
-data.location.mapsLink;
-
-if(data.design.heroImages.length){
-document.getElementById("heroImage").src =
-data.design.heroImages[0];
+/* GUEST NAME */
+const p=new URLSearchParams(location.search);
+if(p.get('to')){
+  guestName.innerText="Kepada Yth: "+p.get('to');
 }
 
-if(data.music.audioUrl){
-document.getElementById("music").src =
-data.music.audioUrl;
+/* MUSIC */
+if(data.music.enabled){
+  bgMusic.src=data.music.audioUrl;
+  bgMusic.loop=data.music.loop;
+  bgMusic.volume=data.music.volume;
 }
+
+/* LOCATION */
+locationText.innerText=data.location.place+" – "+data.location.address;
+map.src=data.location.mapsUrl.replace("maps.app.goo.gl","www.google.com/maps/embed?pb=");
+
+/* RSVP */
+if(!data.rsvp.enabled){
+  rsvpSection.style.display="none";
+}
+rsvpTitle.innerText=data.rsvp.title;
+
+/* FOOTER */
+closing.innerText=data.family.closingMessage;
+footer.innerText="© "+data.footer.year+" "+data.footer.credit;
+
+/* COUNTDOWN */
+const target=new Date(data.datetime.date+"T"+data.datetime.startTime+":00");
+setInterval(()=>{
+  const diff=target-new Date();
+  days.innerText=Math.floor(diff/86400000);
+  hours.innerText=Math.floor(diff/3600000)%24;
+  minutes.innerText=Math.floor(diff/60000)%60;
+  seconds.innerText=Math.floor(diff/1000)%60;
+},1000);
+
+});
+
+/* OPEN */
+openInvitation.onclick=()=>{
+  gsap.to("#cover",{opacity:0,duration:1.5,onComplete:()=>cover.remove()});
+  bgMusic.play();
+}
+
+/* PARTICLES */
+particlesJS("particles-js",{
+ particles:{number:{value:70},color:{value:"#D4AF37"},move:{speed:1},size:{value:2}}
 });
 </script>
 
