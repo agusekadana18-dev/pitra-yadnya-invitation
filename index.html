@@ -435,9 +435,9 @@ select{
         <p>Sukra, 26 Juni 2026</p>
 
         <div class="guest">
-            Kepada Yth.<br>
-            <strong>Bapak / Ibu</strong>
-        </div>
+    Kepada Yth.<br>
+    <strong id="guestName">Bapak / Ibu</strong>
+</div>
 
         <button class="open-btn" id="openInvitation">
             📩 Buka Undangan
@@ -671,6 +671,7 @@ I Gusti Agung Ngurah Sidhemen
 </footer>
 
 </div>
+    
 
 <script>
 
@@ -723,7 +724,15 @@ setInterval(function(){
         Math.floor((distance%(1000*60))/1000);
 
 },1000);
+    
+// Ambil nama tamu dari URL
+const params = new URLSearchParams(window.location.search);
+const guest = params.get("to");
 
+if (guest) {
+    document.getElementById("guestName").innerText =
+        decodeURIComponent(guest.replace(/\+/g, " "));
+}
 </script>
 
 </body>
