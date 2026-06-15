@@ -37,74 +37,81 @@ body{
 ====================== */
 
 .cover{
-    height:100vh;
-    background:#000;
-    color:white;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:20px;
+height:100vh;
+background:
+linear-gradient(
+rgba(0,0,0,.45),
+rgba(0,0,0,.65)
+),
+url('assets/cover-premium.jpg');
+
+```
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+position:relative;
+```
+
+}
+
+.cover::before{
+content:"";
+position:absolute;
+inset:0;
+background:
+radial-gradient(
+circle at center,
+transparent 0%,
+rgba(0,0,0,.2) 50%,
+rgba(0,0,0,.65) 100%
+);
 }
 
 .cover-content{
-    max-width:900px;
-}
-
-.cover-label{
-    color:var(--gold);
-    letter-spacing:6px;
-    font-size:12px;
+position:relative;
+z-index:2;
+max-width:900px;
 }
 
 .cover h1{
-    font-family:'Playfair Display',serif;
-    font-size:70px;
-    margin:10px 0;
-    color:white;
-}
-
-.gold-line{
-    width:90px;
-    height:2px;
-    background:var(--gold);
-    margin:20px auto;
+font-family:'Playfair Display',serif;
+font-size:80px;
+color:#fff;
+text-shadow:
+0 0 15px rgba(212,175,55,.35);
 }
 
 .cover h2{
-    color:#e8d08a;
-    font-family:'Playfair Display',serif;
-    font-size:40px;
-    margin-bottom:15px;
-}
-
-.cover p{
-    color:#ddd;
-}
-
-.guest{
-    margin-top:30px;
-    margin-bottom:30px;
-}
-
-.guest strong{
-    color:#e8c861;
-    font-size:22px;
+color:#f4d36d;
+font-size:48px;
+text-shadow:
+0 0 12px rgba(212,175,55,.25);
 }
 
 .open-btn{
-    border:none;
-    cursor:pointer;
-    padding:15px 40px;
-    border-radius:50px;
-    background:linear-gradient(
-    90deg,
-    #c89f2b,
-    #f4d36d
-    );
-    font-weight:600;
-    font-size:16px;
+border:none;
+cursor:pointer;
+padding:18px 48px;
+border-radius:60px;
+background:linear-gradient(
+180deg,
+#f4d36d,
+#c89f2b
+);
+color:#000;
+font-weight:700;
+font-size:18px;
+box-shadow:
+0 10px 30px rgba(212,175,55,.35);
 }
+
 
 /* ======================
    MAIN
@@ -422,26 +429,36 @@ select{
 <!-- COVER -->
 <section class="cover" id="cover">
 
-    <div class="cover-content">
+   <section class="cover" id="cover">
 
-        <span class="cover-label">UPACARA</span>
+<div class="cover-content">
 
-        <h1>Pitra Yadnya</h1>
+```
+<div class="orn">ᬒᬫ᭄</div>
 
-        <div class="gold-line"></div>
+<span class="cover-label">UPACARA</span>
 
-        <h2>I Gusti Agung Ngurah Sidhemen</h2>
+<h1>Pitra Yadnya</h1>
 
-        <p>Sukra, 26 Juni 2026</p>
+<div class="gold-line"></div>
 
-        <div class="guest">
+<h2>I Gusti Agung Ngurah Sidhemen</h2>
+
+<p>Sukra, 26 Juni 2026</p>
+
+<div class="guest">
     Kepada Yth.<br>
     <strong id="guestName">Bapak / Ibu</strong>
 </div>
 
-        <button class="open-btn" id="openInvitation">
-            📩 Buka Undangan
-        </button>
+<button class="open-btn" id="openInvitation">
+    📩 Buka Undangan
+</button>
+```
+
+</div>
+
+</section>
 
     </div>
 
